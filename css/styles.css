@@ -26,7 +26,8 @@ a:not(.button) {
   text-decoration: underline;
 }
 
-.button {
+.button,
+.hs-button {
   font-size: 1.125rem;
   line-height: 1.3125rem;
   border: none;
@@ -40,15 +41,21 @@ a:not(.button) {
   transition: all 300ms ease;
   text-align: center;
   display: inline-block;
+  cursor: pointer;
 }
-.button:hover, .button:focus {
+.button:hover, .button:focus,
+.hs-button:hover,
+.hs-button:focus {
   background: #073956;
 }
-.button.reverse {
+.button.reverse,
+.hs-button.reverse {
   background: #ffffff;
   color: #104664;
 }
-.button.reverse:hover, .button.reverse:focus {
+.button.reverse:hover, .button.reverse:focus,
+.hs-button.reverse:hover,
+.hs-button.reverse:focus {
   background: #cdcdcd;
 }
 
@@ -102,8 +109,12 @@ h2 {
 img.full-size {
   margin-left: auto;
   margin-right: auto;
-  max-width: 1440px;
+  width: 1440px;
   display: block;
+}
+
+.apex-47 {
+  white-space: nowrap;
 }
 
 /* Sections */
@@ -287,6 +298,36 @@ img.full-size {
   padding: 4rem 2.5rem;
 }
 
+.logos {
+  overflow: hidden;
+  width: auto;
+  padding: 2rem 0 4rem;
+}
+.logos .logo-scroller {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.logos .logo-scroller ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-direction: row;
+  align-items: center;
+  flex: 0 0 auto;
+  animation-name: logoScroll;
+  animation-iteration-count: infinite;
+  animation-duration: 14000ms;
+  animation-timing-function: linear;
+}
+.logos .logo-scroller ul li {
+  flex-grow: 1;
+  margin-right: 4rem;
+}
+
 .testimonials {
   padding: 4rem 0;
   background-size: cover;
@@ -395,10 +436,10 @@ img.full-size {
   border: 1px solid rgba(0, 0, 0, 0.05);
   box-shadow: 0px 33px 13px rgba(0, 0, 0, 0.01), 0px 18px 11px rgba(0, 0, 0, 0.02), 0px 8px 8px rgba(0, 0, 0, 0.03), 0px 2px 5px rgba(0, 0, 0, 0.04);
   border-radius: 23px;
-  height: 420px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 4rem 2.5rem;
 }
 
 .footer {
@@ -462,6 +503,68 @@ img.full-size {
   width: 27px;
   height: 27px;
   background-image: url("../img/linkedin.svg");
+}
+
+@keyframes logoScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+form fieldset {
+  max-width: 1000px !important;
+  display: grid;
+  grid-template-columns: auto;
+  column-gap: 1.125rem;
+}
+@media (min-width: 500px) {
+  form fieldset.form-columns-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+form fieldset .hs-form-field {
+  margin-bottom: 1.5rem;
+  width: 100% !important;
+  float: inherit !important;
+}
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+form .hs-error-msgs {
+  list-style: none;
+  margin: 0.25rem 0 0.5rem;
+  display: block;
+  padding: 0;
+}
+form .hs-error-msgs label {
+  font-size: 0.75rem;
+}
+form .input {
+  margin: 0;
+}
+form input:not([type=submit]),
+form select {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #000000;
+  border-radius: 0.3125rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+form .inputs-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+form .hs_submit {
+  margin-top: 2rem;
+}
+form .hs_submit input {
+  width: auto;
 }
 
 /*# sourceMappingURL=styles.css.map */
