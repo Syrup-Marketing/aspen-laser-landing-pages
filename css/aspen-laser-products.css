@@ -166,16 +166,15 @@ img.full-size {
 .callout .container {
   position: relative;
 }
-.callout .apex-image {
-  display: none;
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  transform: translateY(-50%);
+.callout .callout-row {
+  display: grid;
+  row-gap: 2rem;
+  column-gap: 6rem;
+  align-items: center;
 }
 @media (min-width: 768px) {
-  .callout .apex-image {
-    display: block;
+  .callout .callout-row {
+    grid-template-columns: 2fr 3fr;
   }
 }
 .callout .callout-box {
@@ -185,13 +184,6 @@ img.full-size {
   background: #FCFCFC;
   border-radius: 23px;
   position: relative;
-}
-@media (min-width: 768px) {
-  .callout .callout-box {
-    margin-right: 0;
-    margin-left: auto;
-    max-width: 738px;
-  }
 }
 .callout .bigger {
   font-weight: 500;
